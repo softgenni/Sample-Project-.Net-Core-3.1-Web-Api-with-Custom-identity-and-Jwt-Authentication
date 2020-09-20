@@ -21,7 +21,9 @@
     <ProjectReference Include="..\ClientPortal.Common\ClientPortal.Common.csproj" />
     <ProjectReference Include="..\ClientPortal.Data\ClientPortal.Data.csproj" />
     <ProjectReference Include="..\ClientPortal.Entity\ClientPortal.Entities.csproj" />
+    <ProjectReference Include="..\ClientPortal.Mapper\ClientPortal.Mapper.csproj" />
     <ProjectReference Include="..\ClientPortal.Models\ClientPortal.Models.csproj" />
+    <ProjectReference Include="..\ClientPortal.Services\ClientPortal.Services.csproj" />
   </ItemGroup>
 
 

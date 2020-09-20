@@ -15,16 +15,16 @@ namespace ClientPortal.WebApi.Controllers
     [ApiController]
     public class UserProfileController : ControllerBase
     {
-        private UserManager<User> _userManager;
-        public UserProfileController(UserManager<User> userManager)
+        private Services.IUserManager UserManager;
+        public UserProfileController(Services.IUserManager userManager)
         {
-            _userManager = userManager;
+            UserManager = userManager;
         }
         [HttpGet]
         [Route("userprofilebyId/{Id}")]
         public async Task<IActionResult> GetUserProfileById(string Id)
         {
-            var result = await _userManager.FindByIdAsync(Id);
+            var result = await UserManager.GetUserByIdAsync(Id);
             return Ok(result);
         }
     }

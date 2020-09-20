@@ -3,17 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientPortal.WebApi", "ClientPortal.WebApi\ClientPortal.WebApi.csproj", "{A7697B63-9693-43AC-B767-EFAA999E8052}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientPortal.WebApi", "ClientPortal.WebApi\ClientPortal.WebApi.csproj", "{A7697B63-9693-43AC-B767-EFAA999E8052}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientPortal.Entities", "ClientPortal.Entity\ClientPortal.Entities.csproj", "{071E5528-48C6-424B-B42F-146D93C27F2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientPortal.Entities", "ClientPortal.Entity\ClientPortal.Entities.csproj", "{071E5528-48C6-424B-B42F-146D93C27F2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientPortal.Data", "ClientPortal.Data\ClientPortal.Data.csproj", "{0D95D39B-17AD-4A23-98A8-34C2B9326980}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientPortal.Data", "ClientPortal.Data\ClientPortal.Data.csproj", "{0D95D39B-17AD-4A23-98A8-34C2B9326980}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientPortal.Models", "ClientPortal.Models\ClientPortal.Models.csproj", "{D0530683-6EDA-405B-9689-E3C97D461480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientPortal.Models", "ClientPortal.Models\ClientPortal.Models.csproj", "{D0530683-6EDA-405B-9689-E3C97D461480}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientPortal.EntityMapping", "ClientPortal.EntityMapping\ClientPortal.EntityMapping.csproj", "{A0D14CF5-D806-4C12-B316-C92D6163628E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientPortal.EntityMapping", "ClientPortal.EntityMapping\ClientPortal.EntityMapping.csproj", "{A0D14CF5-D806-4C12-B316-C92D6163628E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientPortal.Common", "ClientPortal.Common\ClientPortal.Common.csproj", "{B8025BC2-A38D-4E04-8506-E71C7654AB03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientPortal.Common", "ClientPortal.Common\ClientPortal.Common.csproj", "{B8025BC2-A38D-4E04-8506-E71C7654AB03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientPortal.Repositories", "ClientPortal.Repositories\ClientPortal.Repositories.csproj", "{D576B3BD-587D-4A18-AF85-94ACE78AB4DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientPortal.Services", "ClientPortal.Services\ClientPortal.Services.csproj", "{08EA7353-D30D-44BE-999A-0E142192C536}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientPortal.Mapper", "ClientPortal.Mapper\ClientPortal.Mapper.csproj", "{59B9D8A4-FD76-4DBA-A88B-BEA24D5D755D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +51,18 @@ Global
 		{B8025BC2-A38D-4E04-8506-E71C7654AB03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8025BC2-A38D-4E04-8506-E71C7654AB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8025BC2-A38D-4E04-8506-E71C7654AB03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D576B3BD-587D-4A18-AF85-94ACE78AB4DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D576B3BD-587D-4A18-AF85-94ACE78AB4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D576B3BD-587D-4A18-AF85-94ACE78AB4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D576B3BD-587D-4A18-AF85-94ACE78AB4DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08EA7353-D30D-44BE-999A-0E142192C536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08EA7353-D30D-44BE-999A-0E142192C536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08EA7353-D30D-44BE-999A-0E142192C536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08EA7353-D30D-44BE-999A-0E142192C536}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B9D8A4-FD76-4DBA-A88B-BEA24D5D755D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B9D8A4-FD76-4DBA-A88B-BEA24D5D755D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B9D8A4-FD76-4DBA-A88B-BEA24D5D755D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B9D8A4-FD76-4DBA-A88B-BEA24D5D755D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

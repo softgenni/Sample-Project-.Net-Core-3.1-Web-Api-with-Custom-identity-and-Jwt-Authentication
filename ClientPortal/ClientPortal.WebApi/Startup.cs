@@ -1,9 +1,13 @@
 using System;
 using System.Text;
+using AutoMapper;
 using ClientPortal.Common.SeedUserData;
 using ClientPortal.Data;
 using ClientPortal.Entities;
+using ClientPortal.Mapper;
 using ClientPortal.Models;
+using ClientPortal.Repositories;
+using ClientPortal.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -84,7 +88,7 @@ namespace ClientPortal.WebApi
                     Version = "v1"
                 });
             });
-            //Identity services
+            //Identity services DI
             services.TryAddScoped<IUserValidator<User>, UserValidator<User>>();
             services.TryAddScoped<IPasswordValidator<User>, PasswordValidator<User>>();
             services.TryAddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
@@ -98,8 +102,21 @@ namespace ClientPortal.WebApi
             services.TryAddScoped<UserManager<User>>();
             services.TryAddScoped<SignInManager<User>>();
             services.TryAddScoped<RoleManager<Role>>();
-
+            //Add HttpContextAccessor DI
             services.TryAddTransient<IHttpContextAccessor, HttpContextAccessor>();
+            // Add DBContext DI
+            services.AddScoped<DbContext, ClientContext>();
+            // Add Auto Mapper Profile DI
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new UserMapperProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+            // Add Services and Repository DI
+            services.TryAddScoped<IUserRepository, UserRepository>();
+            services.TryAddScoped<IUserManager, UserManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

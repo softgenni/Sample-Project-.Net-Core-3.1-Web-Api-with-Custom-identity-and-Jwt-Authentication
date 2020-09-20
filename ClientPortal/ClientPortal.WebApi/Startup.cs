@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 namespace ClientPortal.WebApi
 {
@@ -75,6 +76,14 @@ namespace ClientPortal.WebApi
                     ClockSkew = TimeSpan.Zero
                 };
             });
+            services.AddSwaggerGen(config =>
+            {
+                config.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Client Portal",
+                    Version = "v1"
+                });
+            });
             //Identity services
             services.TryAddScoped<IUserValidator<User>, UserValidator<User>>();
             services.TryAddScoped<IPasswordValidator<User>, PasswordValidator<User>>();
@@ -97,6 +106,14 @@ namespace ClientPortal.WebApi
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, UserManager<User> userManager, RoleManager<Role> roleManager)
         {
             UpdateDatabase(app);
+            app.UseSwagger();
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Client Portal API V1");
+                c.RoutePrefix = string.Empty;
+            });
             app.Use(async (ctx, next) =>
             {
                 await next();
